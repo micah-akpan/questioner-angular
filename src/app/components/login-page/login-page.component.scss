@@ -1,0 +1,61 @@
+@import url("../../../assets/scss/_base.scss");
+@import url("../../../assets/scss/_form.scss");
+
+.welcome-back-msg {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #116466;
+}
+
+.sign-up__link {
+  display: none;
+  text-align: center;
+}
+
+.sign-up__link a,
+#forgot-pwd a {
+  color: #116466;
+}
+
+.sign-up__link a:hover,
+#forgot-pwd a:hover {
+  color: #07504c;
+  text-decoration: underline;
+}
+
+.q-form {
+  background-color: #fff;
+}
+
+/* User Feedback for form inputs */
+.user-feedback {
+  width: 100%;
+  background: #ffcb9a;
+  overflow: hidden;
+  color: red;
+}
+
+.user-feedback > * {
+  float: left;
+}
+
+.user-feedback img {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.info-box {
+  max-height: 100px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  header .header-content {
+    justify-content: center;
+  }
+
+  .sign-up__link {
+    display: block;
+  }
+}

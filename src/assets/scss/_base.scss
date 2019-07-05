@@ -1,0 +1,545 @@
+/* Base css stylesheet
+   Contains global styles, common to every page
+*/
+@import url("https://fonts.googleapis.com/css?family=Aleo|Marck+Script|Roboto");
+
+$white-hex          : #fff;
+$dark-forest-green  : #07504c;
+$light-forest-green : #116466;
+$light-orange-color : #ffcb9a;
+
+
+html {
+  font: 15px/1.5 Roboto, Helvetica, sans-serif;
+}
+
+body {
+  margin          : 0 auto;
+  padding         : 0;
+  color           : #555;
+  overflow        : auto;
+  background-color: #fafafa;
+  display         : flex;
+  flex-direction  : column;
+  height          : 100vh;
+  justify-content : space-between;
+  font-family: Roboto;
+}
+
+.container {
+  width   : 80%;
+  margin  : 0 auto;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
+}
+
+/* Global */
+h3 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color          : #555;
+}
+
+ul {
+  list-style: none;
+  margin    : 0;
+  padding   : 0;
+}
+
+button {
+  border : none;
+  outline: none;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.mt-200 {}
+
+.mb-200 {
+  margin-bottom: 200px;
+}
+
+.get-started-message {
+  font-size: 2.5em;
+}
+
+.q-btn {
+  background-color: #116466;
+  color           : $white-hex;
+  padding         : 10px;
+  cursor          : pointer;
+
+  &:hover {
+    background-color: #07504c;
+  }
+}
+
+.q-flex {
+  display: flex;
+}
+
+.q-flex-item {
+  flex: 1 1 auto;
+}
+
+.white {
+  color: $white-hex;
+}
+
+.fg-white {
+  color: $white-hex;
+}
+
+.bg-white {
+  background-color: $white-hex;
+}
+
+.p-cursor {
+  cursor: pointer;
+}
+
+.text__large {
+  font-size     : 1em;
+  text-transform: uppercase;
+  font-weight   : 600;
+}
+
+.text__small {
+  font-size: 0.5em;
+}
+
+.btn-large__40 {
+  width: 40%;
+}
+
+.btn__rounded {
+  border-radius: 3px;
+}
+
+.btn__centered {
+  display: block;
+  margin : 0 auto;
+}
+
+/* App Main Header */
+.app-main-header {
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  width           : 100%;
+  min-height      : 80px;
+  background-color: $light-forest-green;
+  box-shadow      : 2px 2px 5px #777;
+  z-index         : 1000;
+
+  .header-content {
+    display: flex;
+  }
+
+  nav {
+    span {
+      color: #fff;
+    }
+  }
+}
+
+.nav-block__link {
+  color: $white-hex;
+
+  &:visited {
+    color: $white-hex;
+  }
+
+  &:hover {
+    color: $light-orange-color;
+  }
+}
+
+// App Brand logo
+.q-logo {
+  padding       : 0;
+  margin-top    : 20px;
+  font-family   : "Marck Script", cursive;
+  text-transform: capitalize;
+}
+
+.q-logo-border {
+  &::after {
+    content    : "|";
+    padding    : 0 20px;
+    color      : $dark-forest-green;
+    font-family: Roboto, sans-serif;
+  }
+}
+
+.app-main-nav {
+  margin-top: 28px;
+  position  : relative;
+}
+
+.app-main-nav__list__item {
+  display    : inline-block;
+  margin-left: 2px;
+  font-weight: 600;
+}
+
+.main-nav-block__link {
+  display       : inline-block;
+  text-transform: uppercase;
+  color         : $white-hex;
+  transition    : color 0.2s;
+  font-weight   : 600;
+
+  &:link {
+    color: $white-hex;
+  }
+
+  &:hover {
+    color: #ffcb9a;
+  }
+}
+
+/* Left Nav */
+.q-left-nav {
+  flex  : 1 1 100%;
+  margin: 2em 0;
+}
+
+.q-left-nav__list__item {
+  margin-right: 10px;
+}
+
+.q-left-nav__list__item__link {
+  text-transform: uppercase;
+  margin-top    : 5px;
+}
+
+/* Right Nav */
+.q-right-nav {
+  width: 100%;
+
+  ul {
+    display : flex;
+    position: absolute;
+    top     : 0;
+    right   : 10px;
+
+    span {
+      margin-right: 5px;
+
+      &+li {
+
+        a {
+          text-transform: uppercase;
+          color         : #fff;
+
+          &:hover {
+            color: #ffcb9a;
+          }
+        }
+      }
+    }
+  }
+}
+
+.notify-user__nav {
+  button {
+    width : 38px;
+    height: 38px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// Mobile menu
+
+/* Custom Menu Trigger Button */
+.mobile-nav-sidebar {}
+
+.mobile-nav-sidebar__wrapper {
+  position: fixed;
+  top     : 10px;
+  right   : 5px;
+  display : none;
+  z-index : 9999;
+  padding : 1em;
+  cursor  : pointer;
+  outline : 0;
+
+  div {
+    width           : 30px;
+    height          : 5px;
+    background-color: #aaa;
+    margin          : 6px 0;
+    transition      : all 0.4s;
+
+    &:last-child {
+      width: 25px;
+    }
+  }
+}
+
+.change {
+  .menu-bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    -moz-transform   : rotate(-45deg) translate(-9px, 6px);
+    -ms-transform    : rotate(-45deg) translate(-9px, 6px);
+    transform        : rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .menu-bar2 {
+    opacity: 0;
+  }
+
+  .menu-bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform        : rotate(45deg) translate(-8px -8px);
+  }
+}
+
+/* Search Bar */
+.q-search__nav {
+  li {
+    display: inline-block;
+    padding: 1rem 0;
+
+    button {
+      padding   : 1rem;
+      cursor    : pointer;
+      background: transparent;
+    }
+
+    img {
+      width         : 25px;
+      height        : 25px;
+      vertical-align: middle;
+    }
+  }
+
+  .search-bar__link {
+    width: 0;
+
+    input[type="search"] {
+      background   : transparent;
+      margin-left  : -15px;
+      border       : none;
+      border-bottom: 1.5px solid #aaa;
+      outline      : none;
+      padding      : 1rem 0;
+      box-sizing   : content-box;
+      color        : #333333;
+      width        : 0;
+      transition   : width 0.3s ease-in;
+    }
+
+    .show_input {
+      display: inline-block;
+      width: 100% !important;
+    }
+  }
+
+  .active_link {
+    border-bottom: 2px solid #07504c;
+  }
+
+  .search-bar__link-show {
+    width: 30%;
+  }
+}
+
+/* Mobile Nav Menu */
+.mobile-nav-menu__wrapper {
+  position  : fixed;
+  top       : 50px;
+  right     : 0;
+  background: $light-forest-green;
+  display   : none;
+  transition: display 0.2s;
+  width     : 100%;
+  color     : black;
+  z-index   : 9998;
+
+  .q-sidenav__menu {
+    width: 100%;
+
+    li {
+      display       : block;
+      width         : 100%;
+      text-transform: uppercase;
+      padding       : 20px 20px 20px 10px;
+      text-align    : right;
+      cursor        : pointer;
+
+      &:first-of-type {
+        padding-top: 40px;
+      }
+
+      &:last-of-type {
+        padding-bottom: 40px;
+      }
+
+      a {
+        width        : 90%;
+        color        : $white-hex;
+        display      : inline-block;
+        border-bottom: 2px solid #cccccc;
+        padding      : 5px 0;
+
+        &:hover {
+          color: #ffcb9a;
+        }
+      }
+    }
+  }
+}
+
+.nav-menu-show {
+  display: block;
+}
+
+/* Footer */
+.app-footer {
+  width     : 100%;
+  padding   : 10px 24px;
+  background: #fafafa;
+  font-size : 0.8em;
+  text-align: center;
+  margin: 0 auto;
+
+  ul {
+    li {
+      display: inline-block;
+      padding: 0;
+      margin : 0;
+    }
+  }
+
+  .app-footer__content {
+    display: flex;
+    width  : 100%;
+  }
+
+  .copyright {
+    margin    : 0;
+    color     : #777;
+    flex      : 1 0 25%;
+    text-align: left;
+  }
+
+  .footer-sec__links {
+    flex: 1 1 50%;
+
+    li {
+      padding: 0 1rem;
+    }
+
+    a {
+      color: #777;
+
+      &:hover {
+        color: #555;
+      }
+    }
+  }
+
+  .footer-sec__social-media {
+    margin: 0;
+    color : #777;
+    flex  : 1 1 25%;
+
+    li {
+      width       : 25px;
+      height      : 25px;
+      margin-right: 10px;
+    }
+
+    .align-center {
+      text-align: center;
+    }
+  }
+
+  .social-media__links {
+
+    li {
+      a {
+        width  : 100%;
+        display: flex !important;
+      }
+
+      img {
+        display: block;
+        width  : 30px;
+        height : 30px;
+      }
+
+      span {
+        display: block;
+        flex   : 2 0 auto;
+      }
+    }
+  }
+}
+
+.sticky-footer {
+  position: fixed;
+  left    : 0;
+  bottom  : 0;
+  width   : 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .q-right-nav {
+    display: none;
+  }
+
+  .q-left-nav {
+    display: none;
+  }
+
+  .q-logo-border {
+    &::after {
+      display: none;
+    }
+  }
+
+  .get-started-message {
+    font-size: 2em;
+  }
+
+  .mobile-nav-sidebar__wrapper {
+    display: block;
+  }
+
+  .app-footer {
+    .app-footer__content {
+      display: block;
+    }
+
+    .copyright {
+      text-align   : center;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-nav-menu__wrapper {
+    .sidebar-menu__wrapper {
+      display: none;
+    }
+  }
+}
