@@ -7,11 +7,18 @@
   margin       : 200px auto;
   border       : 1px solid #116466;
   border-radius: 3px;
-  padding: 1rem;
+  padding      : 1rem;
+  background: #ffffff;
+}
 
-  .q-form__input {
-
-  }
+.q-form__input {
+  border       : #d4d9e2 1px solid;
+  border-radius: 3px;
+  padding      : 1rem;
+  color        : #596377;
+  outline      : none;
+  display      : block;
+  width: 100%;
 }
 
 .q-form .social-media__links--option-rule {
@@ -86,29 +93,11 @@
   background-color: #07504c;
 }
 
-.q-form .social-media__links {
-  margin    : 20px auto 50px;
-  transition: background-color 0.3s;
-}
-
-.q-form .social-media__links ul {
-  list-style: none;
-  margin    : 0;
-  padding   : 0;
-}
-
-.q-form .social-media__links li {
-  text-align   : center;
-  margin-bottom: 10px;
-}
-
-.social-media__links a {
-  display         : flex;
-  width           : 100%;
-  color           : #ffffff;
-  background-color: grey;
-  padding         : 0.8rem;
-  text-decoration : none;
+.social-media__links {
+  li {
+    text-align   : center;
+    margin-bottom: 10px;
+  }
 
   img {
     display: block;
@@ -117,27 +106,10 @@
   }
 
   span {
-    display: block;
-    flex   : 2 0 auto;
+    display    : block;
+    flex       : 2 0 auto;
     line-height: 2.5;
   }
-}
-
-.q-form .social-media__links .facebook {
-  background-color: #3b5998;
-  transition      : background-color 0.3s;
-}
-
-.q-form .social-media__links .facebook:hover {
-  background-color: #2e4474;
-}
-
-.q-form .social-media__links .google {
-  background-color: #db4a39;
-}
-
-.q-form .social-media__links .google:hover {
-  background-color: #cb4a39;
 }
 
 .q-form .password-input {
@@ -145,34 +117,23 @@
 }
 
 .q-form .toggle-password-visibility {
-  position        : absolute;
-  top             : 34px;
-  right           : 5px;
-  color           : #fff;
-  text-transform  : uppercase;
-  font-weight     : bold;
-  cursor          : pointer;
-  background: transparent;
+  position      : absolute;
+  top           : 34px;
+  right         : 5px;
+  color         : #fff;
+  text-transform: uppercase;
+  font-weight   : bold;
+  cursor        : pointer;
+  background    : transparent;
 
   &:hover {
     background-color: transparent;
   }
 
   .toggle-password__image {
-    width: 25px;
+    width : 25px;
     height: 25px;
   }
-}
-
-.q-form__input {
-  border       : #d4d9e2 1px solid;
-  border-radius: 3px;
-  padding      : 1rem;
-  color        : #596377;
-  outline      : none;
-  display      : block;
-  margin-bottom: 8px;
-  width: 90%;
 }
 
 .q-form__label,
@@ -258,11 +219,11 @@ form abbr[title="required"] {
 }
 
 .auth-process__feedback {
-  padding: 20px 10px;
+  padding   : 10px;
   background: #f44;
-  color: #fff;
-  font-size: 1em;
-  margin: 20px auto;
+  color     : #fff;
+  font-size : 1em;
+  margin    : 20px auto;
 }
 
 .password-match__feedback {

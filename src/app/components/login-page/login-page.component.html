@@ -2,8 +2,7 @@
   <div class="q-form">
       <h3>Log In To Questioner</h3>
       <p class="welcome-back-msg">Welcome back</p>
-
-      <p class="auth-error-message">
+      <p *ngIf="authError" class="auth-process__feedback">
         {{ authError }}
       </p>
       <form
@@ -15,35 +14,37 @@
         (ngSubmit)="submitLoginForm()">
         <p class="user-feedback error"></p>
         <div class="q-form__group">
-          <label for="userEmail" class="q-form__label">Email</label>
+          <label for="email" class="q-form__label">Email</label>
           <input 
-            type="email" 
-            placeholder="" 
-            id="userEmail" 
+            type="text" 
+            placeholder="johndoe@email.com"
+            id="email"
             name="email" 
-            class="q-form__input" 
-            required
+            class="q-form__input"
             formControlName="email"
+            required
           >
-          <!-- <span class="input-validation-feedback">Must be a valid email address</span> -->
+          <div *ngIf="loginForm.invalid && loginForm.dirty && email.errors">
+           <span *ngIf="email.errors.required">Email is required</span>
+          </div>
         </div>
 
         <div class="q-form__group password-input">
           <label for="userPwd" class="q-form__label">Password</label>
           <input 
-            type="password" 
-            placeholder="" 
+            type="{{ setFormControlType() }}"
+            placeholder="********" 
             id="userPwd" 
             name="password" 
             class="q-form__input"
-            pattern="(?=.*\d)(?=.*[a-z]).{8,}" 
-            autocomplete="off" 
-            required
+            autocomplete="off"
             formControlName="password"
+            required
             >
-          <!-- <button class="toggle-password-visibility" type="button">
-            show
-          </button> -->
+          <app-toggle-button 
+            [text]="toggleButtonText"
+            (togglePassword)="onTogglePassword($event)">
+          </app-toggle-button>
           <!-- <span class="input-validation-feedback"></span> -->
           <span id="forgot-pwd"><a href="./reset-password.html">Forgot password?</a></span>
         </div>

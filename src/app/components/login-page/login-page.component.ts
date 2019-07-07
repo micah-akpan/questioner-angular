@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth-service';
 
 @Component({
@@ -7,30 +7,57 @@ import { AuthService } from '../../shared/services/auth-service';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
-export class LoginPageComponent implements OnInit {
-  loginForm: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl('')
+export class LoginPageComponent implements OnInit, OnDestroy {
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.pattern(/(?=.*\d)(?=.*[a-z]).{8,}/)]]
   });
 
   authError: string;
+  toggleFdbckTimerId: number;
+  toggleButtonText = 'Hide';
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
     // TODO: PUT INITIALIZATION LOGIC HERE
   }
 
   submitLoginForm(): void {
-    // TODO: PUT LOGIN FORM SUBMIT LOGIC HERE
     this.authService.login(this.loginForm.value).subscribe((response) => {
-      const { error, ok } = response;
-      if (!ok) {
-        this.authError = error.error;
-      } else {
-        this.authError = '';
-        console.log('You are logged in....');
-      }
+      this.authError = '';
+    }, ({ error }) => {
+      this.authError = error.error;
+      this.toggleFeedbackMessage();
     });
+  }
+
+  toggleFeedbackMessage() {
+    this.toggleFdbckTimerId = window.setTimeout(() => {
+      this.authError = '';
+    }, 3000);
+  }
+
+  onTogglePassword(event: boolean) {
+    this.toggleButtonText = event ? 'Show' : 'Hide';
+  }
+
+  setFormControlType(): string {
+    return this.toggleButtonText === 'Show' ? 'password' : 'text';
+  }
+
+  get email() {
+    return this.loginForm.get('email');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
+  }
+
+  ngOnDestroy() {
+    window.clearInterval(this.toggleFdbckTimerId);
   }
 }
