@@ -31,7 +31,7 @@
         <div class="q-form__group password-input">
           <label for="userPwd" class="q-form__label">Password</label>
           <input 
-            type="password" 
+            type="{{ setFormControlType() }}"
             placeholder="********" 
             id="userPwd" 
             name="password" 
@@ -41,9 +41,10 @@
             required
             formControlName="password"
             >
-          <!-- <button class="toggle-password-visibility" type="button">
-            show
-          </button> -->
+          <app-toggle-button 
+            [text]="toggleButtonText"
+            (togglePassword)="onTogglePassword($event)">
+          </app-toggle-button>
           <!-- <span class="input-validation-feedback"></span> -->
           <span id="forgot-pwd"><a href="./reset-password.html">Forgot password?</a></span>
         </div>

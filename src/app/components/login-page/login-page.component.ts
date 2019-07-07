@@ -15,6 +15,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   authError: string;
   toggleFdbckTimerId: number;
+  toggleButtonText = 'Hide';
 
   constructor(
     private authService: AuthService,
@@ -38,6 +39,14 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     this.toggleFdbckTimerId = window.setTimeout(() => {
       this.authError = '';
     }, 3000);
+  }
+
+  onTogglePassword(event: boolean) {
+    this.toggleButtonText = event ? 'Show' : 'Hide';
+  }
+
+  setFormControlType(): string {
+    return this.toggleButtonText === 'Show' ? 'password' : 'text';
   }
 
   ngOnDestroy() {
