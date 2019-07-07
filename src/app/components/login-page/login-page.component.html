@@ -3,7 +3,7 @@
       <h3>Log In To Questioner</h3>
       <p class="welcome-back-msg">Welcome back</p>
 
-      <p class="auth-error-message">
+      <p *ngIf="authError" class="auth-process__feedback">
         {{ authError }}
       </p>
       <form
@@ -18,8 +18,8 @@
           <label for="userEmail" class="q-form__label">Email</label>
           <input 
             type="email" 
-            placeholder="" 
-            id="userEmail" 
+            placeholder="johndoe@email.com"
+            id="userEmail"
             name="email" 
             class="q-form__input" 
             required
@@ -31,8 +31,8 @@
         <div class="q-form__group password-input">
           <label for="userPwd" class="q-form__label">Password</label>
           <input 
-            type="password" 
-            placeholder="" 
+            type="{{ setFormControlType() }}"
+            placeholder="********" 
             id="userPwd" 
             name="password" 
             class="q-form__input"
@@ -41,9 +41,10 @@
             required
             formControlName="password"
             >
-          <!-- <button class="toggle-password-visibility" type="button">
-            show
-          </button> -->
+          <app-toggle-button 
+            [text]="toggleButtonText"
+            (togglePassword)="onTogglePassword($event)">
+          </app-toggle-button>
           <!-- <span class="input-validation-feedback"></span> -->
           <span id="forgot-pwd"><a href="./reset-password.html">Forgot password?</a></span>
         </div>
