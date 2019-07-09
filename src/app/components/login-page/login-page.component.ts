@@ -9,8 +9,8 @@ import { AuthService } from '../../shared/services/auth-service';
 })
 export class LoginPageComponent implements OnInit, OnDestroy {
   loginForm = this.fb.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required]
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.pattern(/(?=.*\d)(?=.*[a-z]).{8,}/)]]
   });
 
   authError: string;
@@ -47,6 +47,14 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   setFormControlType(): string {
     return this.toggleButtonText === 'Show' ? 'password' : 'text';
+  }
+
+  get email() {
+    return this.loginForm.get('email');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
   }
 
   ngOnDestroy() {

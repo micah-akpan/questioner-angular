@@ -1,14 +1,11 @@
-@import url("../../../assets/scss/_base.scss");
-@import url("../../../assets/scss/_form.scss");
-
 .welcome-back-msg {
   text-align: center;
-  font-size: 1.5rem;
-  color: #116466;
+  font-size : 1.5rem;
+  color     : #116466;
 }
 
 .sign-up__link {
-  display: none;
+  display   : none;
   text-align: center;
 }
 
@@ -19,35 +16,79 @@
 
 .sign-up__link a:hover,
 #forgot-pwd a:hover {
-  color: #07504c;
+  color          : #07504c;
   text-decoration: underline;
-}
-
-.q-form {
-  background-color: #fff;
 }
 
 /* User Feedback for form inputs */
 .user-feedback {
-  width: 100%;
+  width     : 100%;
   background: #ffcb9a;
-  overflow: hidden;
-  color: red;
+  overflow  : hidden;
+  color     : red;
 }
 
-.user-feedback > * {
+.user-feedback>* {
   float: left;
 }
 
 .user-feedback img {
-  width: 20px;
-  height: 20px;
+  width       : 20px;
+  height      : 20px;
   margin-right: 20px;
 }
 
 .info-box {
   max-height: 100px;
-  padding: 20px;
+  padding   : 20px;
+}
+
+.social-media__links {
+  margin    : 20px auto 50px;
+  transition: background-color 0.3s;
+
+  li {
+    text-align   : center;
+    margin-bottom: 10px;
+  }
+
+  a {
+    display         : flex;
+    width           : 100%;
+    color           : #ffffff;
+    background-color: grey;
+    padding         : 0.8rem;
+    text-decoration : none;
+
+    img {
+      display: block;
+      width  : 30px;
+      height : 30px;
+    }
+
+    span {
+      display    : block;
+      flex       : 2 0 auto;
+      line-height: 2.5;
+    }
+  }
+
+  .facebook {
+    background-color: #3b5998;
+    transition      : background-color 0.3s;
+
+    &:hover {
+      background-color: #2e4474;
+    }
+  }
+
+  .google {
+    background-color: #db4a39;
+
+    &:hover {
+      background-color: #cb4a39;
+    }
+  }
 }
 
 @media (max-width: 768px) {
