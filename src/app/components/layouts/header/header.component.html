@@ -1,0 +1,23 @@
+<div class="app-main-header">
+  <div class="container">
+    <div class="q-flex header-content">
+      <div class="q-branding" class="white">
+        <a href="#!">
+          <h1 class="q-logo q-logo-w-border">Questioner</h1>
+        </a>
+      </div>
+
+      <nav class="q-left-nav">
+        <ul>
+          <li><a [routerLink]="'/meetups'">Discover meetups</a></li>
+        </ul>
+      </nav>
+      <nav class="q-right-nav" *ngIf="!userIsAuthenticated">
+        <ul>
+          <li><a [routerLink]="'login'" role="button" aria-label="Log in button" class="sign-in">Login</a></li>
+          <li><a href="#!" role="button" aria-label="Sign Up button" class="sign-up">Sign Up</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

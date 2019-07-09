@@ -1,0 +1,367 @@
+.heading-sec__primary {
+  font-size  : 1.8em;
+  font-family: "Aleo", serif;
+}
+
+/* Right Nav */
+.q-right-nav {
+  a {
+    padding      : 0.5rem;
+    border-radius: 5px;
+  }
+
+  .sign-in,
+  .sign-up {
+    text-transform: uppercase;
+  }
+
+  /* Right Nav Buttons */
+  .sign-up {
+    transition: border 0.2s ease;
+    border    : none;
+    background: #ffcb9a;
+    color     : #116466;
+
+    &:hover {
+      background: transparent;
+      border    : 1px solid #ffcb9a;
+      color     : #ffcb9a;
+    }
+  }
+
+  .sign-in {
+    border      : 1px solid #ffcb9a;
+    text-align  : center;
+    margin-right: 10px;
+    color       : #ffcb9a;
+
+    &:hover {
+      background-color: #ffcb9a;
+      color           : $light-forest-green;
+    }
+  }
+
+  .auth-pages-nav_link {
+    display: inline-block;
+
+    a {
+      text-transform: uppercase;
+      color         : #ffcb9a;
+      padding       : 0;
+      display       : inline;
+    }
+  }
+}
+
+.q-showcase {
+  width     : 100%;
+  height    : 400px;
+  max-height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/showcase2.jpg") center/cover no-repeat;
+  margin-top: 70px;
+  padding   : 0 0 100px 0;
+
+  .q-showcase__content {
+    display       : flex;
+    flex-direction: column;
+  }
+
+  .q-showcase__text {
+    padding   : 0;
+    display   : inline-block;
+    width     : 100%;
+    margin    : calc(400px / 2) auto 0 auto;
+    text-align: center;
+  }
+
+  a[role="button"] {
+    display           : block;
+    margin            : 10px auto;
+    padding           : 1em 2.5em;
+    border-radius     : 30px;
+    width             : 30%;
+    min-width         : 200px;
+    text-align        : center;
+    -webkit-transition: background-color 0.3s, width 0.3s;
+    -moz-transition   : background-color 0.3s, width 0.3s;
+    -o-transition     : background-color 0.3s, width 0.3s;
+    transition        : background-color 0.3s, width 0.3s;
+
+    &:hover {
+      background: #07504c;
+    }
+
+    &:active {
+      background: #116466;
+    }
+  }
+}
+
+/* General styling for cards */
+
+.cards {
+  margin   : 20px auto;
+  width    : 100%;
+  display  : flex;
+  flex-wrap: wrap;
+
+  .q-card {
+    width         : calc(100% / 3 - 20px);
+    flex          : 0 1 auto;
+    margin-right  : 20px;
+    border        : 1px solid #596377;
+    border-radius : 3px;
+    cursor        : pointer;
+    transition    : box-shadow 0.3s ease;
+    padding-bottom: 10px;
+
+    .q-card__primary {
+      width        : 100%;
+      height       : 200px;
+      border-bottom: 1px solid #116466;
+    }
+
+    .q-card__image-container {
+      max-width: 100%;
+      position : relative;
+
+      .q-card__image {
+        width : 100% !important;
+        height: 200px;
+      }
+    }
+
+    .q-card__bottom {
+      width: 100%;
+
+      .meetup-details {
+        display: flex;
+        width  : 100%;
+
+        .meetup-details__primary {
+          width      : 80%;
+          margin-left: 20px;
+
+          h3 {
+            font-size     : 1em;
+            text-align    : left;
+            margin        : 10px 0 0;
+            text-transform: capitalize;
+          }
+        }
+
+        .meetup-details__sec {
+          text-align: center;
+          width     : 20%;
+        }
+      }
+    }
+  }
+
+  .q-card__top {
+    width        : 100%;
+    height       : 200px;
+    border-bottom: 1px solid #116466;
+    cursor       : pointer;
+
+    .q-asked-count {
+      position : absolute;
+      top      : 10px;
+      left     : 10px;
+      color    : #ffffff;
+      font-size: 2rem;
+      cursor   : pointer;
+    }
+  }
+
+  .q-card__no-border {
+    border: none;
+  }
+}
+
+.q-card .q-card__sec .meetup-title {
+  font-size: 1.4rem;
+}
+
+.q-card .q-card__sec .meetup-sched-date {
+  color  : #333333;
+  padding: 0;
+}
+
+.cards .q-card:hover {
+  box-shadow: 1px 2px 2px #d4d9e2;
+}
+
+.cards .q-card__no-border {
+  border: none;
+}
+
+.q-card__no-border img {
+  width  : 20%;
+  display: block;
+  margin : 0 auto 20px auto;
+}
+
+.q-cards {
+  h3 {
+    text-align: center;
+    font-size : 3em;
+  }
+}
+
+.q-cards__more,
+.get-started__btn {
+  color           : #333333 !important;
+  display         : block;
+  border          : none;
+  padding         : 1rem;
+  cursor          : pointer;
+  margin          : 0 auto;
+  background-color: #ffcb9a !important;
+  font-weight     : bold;
+}
+
+.get-started__btn {
+  text-align: center;
+  width     : 30%;
+}
+
+.q-cards__more {
+  border   : 1px solid #333333;
+  padding  : 0.7rem;
+  transform: background-color 0.3s;
+}
+
+.get-started__btn:hover,
+.q-cards__more:hover {
+  background-color: #f7b77c;
+}
+
+.get-started__btn:active {
+  background-color: #ffcb9a;
+}
+
+.questioner-what .questioner-what__text {
+  text-align: center;
+  padding   : 1em;
+}
+
+.questioner-what .cards .q-card,
+.questioner-how .cards .q-card {
+  box-shadow: none;
+}
+
+.questioner-how {}
+
+.get-started {
+  .get-started__msg {
+    font-size: 2.5em;
+  }
+}
+
+// Spinner
+.loader {
+  border        : 2px solid #116466;
+  border-top    : 2px solid #f3f3f3;
+  border-radius : 50%;
+  width         : 30px;
+  height        : 30px;
+  animation     : spin 2s linear infinite;
+  display       : inline-block;
+  vertical-align: middle;
+  margin-left   : 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.default_pointer {
+  cursor: default !important;
+}
+
+.header__no-border {
+  h1 {
+    &:after {
+      content: ""
+    }
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .cards {
+    display: block;
+  }
+
+  .cards .q-card {
+    width        : 100%;
+    display      : block;
+    margin-right : 0;
+    margin-bottom: 20px;
+  }
+
+  .get-started__btn {
+    width: 90%;
+  }
+
+  .q-showcase a[role="button"] {
+    width: 90%;
+  }
+
+  .get-started {
+    .get-started__msg {
+      font-size: 2em;
+    }
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) and (min-width: 768px) {
+  .cards {
+    display: flex;
+  }
+
+  .cards .q-card {
+    width: calc(100% / 2);
+    flex : 1 1 auto;
+  }
+
+  .cards .q-card {
+    margin-bottom: 20px;
+  }
+
+  .q-showcase h2 {
+    margin: calc(300px / 2) auto 0 auto;
+  }
+
+  .q-showcase a[role="button"] {
+    width: 50%;
+  }
+}
+
+
+@media (min-width: 993px) and (max-width: 1012px) {
+  .q-showcase a[role="button"] {
+    width: 50%;
+  }
+}
+
+
+/* Laptop and Desktop Viewport */
+@media (min-width: 992px) {
+  .cards {
+    display: flex;
+  }
+
+  .cards .q-card {
+    margin-bottom: 20px;
+  }
+}

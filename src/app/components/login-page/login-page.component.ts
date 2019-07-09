@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth-service';
 
 @Component({
@@ -9,8 +10,8 @@ import { AuthService } from '../../shared/services/auth-service';
 })
 export class LoginPageComponent implements OnInit, OnDestroy {
   loginForm = this.fb.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required]
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.pattern(/(?=.*\d)(?=.*[a-z]).{8,}/)]]
   });
 
   authError: string;
@@ -19,7 +20,8 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private authService: AuthService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   submitLoginForm(): void {
     this.authService.login(this.loginForm.value).subscribe((response) => {
       this.authError = '';
+      this.router.navigate(['/meetups']);
     }, ({ error }) => {
       this.authError = error.error;
       this.toggleFeedbackMessage();
@@ -47,6 +50,14 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   setFormControlType(): string {
     return this.toggleButtonText === 'Show' ? 'password' : 'text';
+  }
+
+  get email() {
+    return this.loginForm.get('email');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
   }
 
   ngOnDestroy() {

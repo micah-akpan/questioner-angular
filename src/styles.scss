@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Aleo|Marck+Script|Roboto");
+@import url("./assets/scss/_reset.scss");
+@import url("./assets/scss/_base.scss");
+@import url("./assets/scss/_form.scss");
+@import url("./assets/scss/_nav.scss");
 
 html {
-  font: 15px/1.5 Roboto, Helvetica, sans-serif;
+  font: 14px/1.5 Roboto, Helvetica, sans-serif;
 }
