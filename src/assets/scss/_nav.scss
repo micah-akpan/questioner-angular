@@ -1,0 +1,68 @@
+/* Left Nav */
+
+.q-left-nav {
+  flex: 1 1 100%;
+}
+
+.q-left-nav li {
+  margin: 0 10px;
+}
+
+.q-left-nav a {
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+
+/* Right Nav */
+.q-right-nav {
+  width: 100%;
+}
+
+.q-right-nav > ul {
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  text-transform: uppercase;
+}
+
+.q-right-nav > ul > span {
+  margin-right: 5px;
+}
+
+.q-right-nav a {
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Right Nav Buttons */
+.q-right-nav .sign-in,
+.q-right-nav .sign-up {
+  transition: border 0.2s ease;
+}
+
+
+.q-right-nav .sign-in {
+  border: 1px solid #ffcb9a;
+  text-align: center;
+  margin-right: 10px;
+  color: #ffcb9a !important;
+}
+
+.q-right-nav .sign-in:hover {
+  background-color: #ffcb9a;
+  color: #116466 !important;
+}
+
+.q-right-nav a.sign-up {
+  border: none;
+  background: #ffcb9a !important;
+  color: #116466 !important;
+}
+
+.q-right-nav .sign-up:hover {
+  background: transparent !important;
+  border: 1px solid #ffcb9a !important;
+  color: #ffcb9a !important;
+}

@@ -91,7 +91,7 @@ section {
 }
 
 .white {
-  color: $white-hex;
+  color: #fff;
 }
 
 .fg-white {
@@ -136,18 +136,18 @@ section {
   left            : 0;
   width           : 100%;
   min-height      : 80px;
-  background-color: $light-forest-green;
+  background-color: #116466;
   box-shadow      : 2px 2px 5px #777;
   z-index         : 1000;
+}
 
-  .header-content {
-    display: flex;
-  }
+.app-main-header .header-content {
+  display: flex;
+}
 
-  nav {
-    span {
-      color: #fff;
-    }
+.app-main-header nav {
+  span {
+    color: #fff;
   }
 }
 
