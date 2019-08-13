@@ -11,6 +11,7 @@ import { AuthService } from './shared/services/auth-service';
 import { ToggleButtonComponent } from './components/toggle-button/toggle-button.component';
 import { MeetupsComponent } from './components/meetups/meetups.component';
 import { HeaderComponent } from './components/layouts/header/header.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -18,10 +19,14 @@ const routes: Routes = [
     component: LoginPageComponent
   },
   {
+    path: 'sign-up',
+    component: SignupComponent
+  },
+  {
     path: 'meetups',
     component: MeetupsComponent
   }
-]
+];
 
 @NgModule({
   declarations: [
@@ -30,6 +35,7 @@ const routes: Routes = [
     ToggleButtonComponent,
     MeetupsComponent,
     HeaderComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

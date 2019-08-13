@@ -38,10 +38,10 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  toggleFeedbackMessage() {
+  toggleFeedbackMessage(time: number = 3000): void {
     this.toggleFdbckTimerId = window.setTimeout(() => {
       this.authError = '';
-    }, 3000);
+    }, time);
   }
 
   onTogglePassword(event: boolean) {

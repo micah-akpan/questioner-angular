@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="q-form">
+    <h3 class="get-started-text">Get started with a free account</h3>
+
+    <form class="sign-up-form" [formGroup]="signUpForm" (ngSubmit)="submitSignUpForm()">
+      <p *ngIf="authError" class="auth-process__feedback">
+        {{ authError }}
+      </p>
+      <div class="q-form__group">
+        <div class="q-form__input-name">
+          <label for="f-name" class="q-form__label">First Name
+            <abbr title="required">*</abbr>
+          </label>
+          <input type="text" placeholder="Dennis" id="f-name" name="firstname" class="q-form__input"
+            formControlName="firstname" required>
+        </div>
+
+        <div class="q-form__input-name">
+          <label for="l-name" class="q-form__label">Last Name
+            <abbr title="required">*</abbr>
+          </label>
+          <input type="text" placeholder="Ritchie" id="l-name" name="lastname" class="q-form__input"
+            formControlName="lastname" required>
+        </div>
+      </div>
+
+      <div class="q-form__group">
+        <label for="userEmail" class="q-form__label">Email
+          <abbr title="required">*</abbr>
+        </label>
+        <input type="email" placeholder="dennisritchie@email.com" id="userEmail" name="email" formControlName="email"
+          required class="q-form__input">
+      </div>
+
+      <div class="q-form__group password-input">
+        <label for="pwd" class="q-form__label">Password
+          <abbr title="required">*</abbr>
+        </label>
+        <input [type]="setFormControlType()" placeholder="********" id="pwd" name="password" required
+          class="q-form__input" autocomplete="off" formControlName="password" (keyup)="onConfirmPwdChange()">
+        <app-toggle-button [text]="toggleButtonText" (togglePassword)="onTogglePassword($event)"></app-toggle-button>
+        <span class="input-validation-feedback"></span>
+      </div>
+
+      <div class="q-form__group password-input">
+        <label for="c-pwd" class="q-form__label">Confirm Password
+          <abbr title="required">*</abbr>
+        </label>
+        <input [type]="setFormControlType()" placeholder="********" id="c-pwd" class="q-form__input"
+          autocomplete="off" formControlName="confirmPassword" required (keyup)="onConfirmPwdChange()">
+        <span class="pwd-validation-msg">{{ passwordValidationMsg }}</span>
+      </div>
+
+      <button class="q-form__button q-large__button">Sign Up</button>
+    </form>
+
+    <div class="social-media__links--option-rule">
+      <span class="social-media__links--signup-option">OR</span>
+    </div>
+
+    <div class="social-media__links">
+      <ul>
+
+        <li>
+          <a href="#!" class="google">
+            <img src="../assets/icons/google.svg" alt="A red horizontal box with a Google icon and text">
+            <span>Sign Up with Google</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#!" class="facebook">
+            <img src="../assets/icons/facebook-white.svg" alt="A blue horizontal box with a Facebook icon and text">
+            <span>Sign Up with Facebook</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <p class="sign-in__link">Already a member?<a [routerLink]="'login'">Log in</a></p>
+  </div>
+</div>
